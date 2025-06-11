@@ -223,6 +223,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async unlikePost(userId: string, postId: number): Promise<void> {
+    // Remove like entry and see if something was actually deleted
     const deleted = await db
       .delete(postLikes)
       .where(and(eq(postLikes.userId, userId), eq(postLikes.postId, postId)))

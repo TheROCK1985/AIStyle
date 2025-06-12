@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+pillow
+imagehash
+python-dotenv
+requests

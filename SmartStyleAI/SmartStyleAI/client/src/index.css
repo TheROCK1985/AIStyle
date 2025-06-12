@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(320, 39%, 50%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(23, 36%, 85%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(207, 44%, 49%);
+  --accent-foreground: hsl(210, 40%, 98%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Custom StyleSync colors */
+  --style-primary: hsl(320, 39%, 50%);
+  --style-secondary: hsl(23, 36%, 85%);
+  --style-accent: hsl(207, 44%, 49%);
+  --style-neutral: hsl(25, 11%, 97%);
+  --style-charcoal: hsl(0, 0%, 18%);
+  --style-sage: hsl(82, 26%, 50%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(320, 39%, 50%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .style-primary {
+    color: var(--style-primary);
+  }
+  
+  .bg-style-primary {
+    background-color: var(--style-primary);
+  }
+  
+  .style-secondary {
+    color: var(--style-secondary);
+  }
+  
+  .bg-style-secondary {
+    background-color: var(--style-secondary);
+  }
+  
+  .style-accent {
+    color: var(--style-accent);
+  }
+  
+  .bg-style-accent {
+    background-color: var(--style-accent);
+  }
+  
+  .style-charcoal {
+    color: var(--style-charcoal);
+  }
+  
+  .bg-style-charcoal {
+    background-color: var(--style-charcoal);
+  }
+  
+  .style-sage {
+    color: var(--style-sage);
+  }
+  
+  .bg-style-sage {
+    background-color: var(--style-sage);
+  }
+  
+  .gradient-primary {
+    background: linear-gradient(135deg, var(--style-primary), var(--style-accent));
+  }
+  
+  .gradient-secondary {
+    background: linear-gradient(135deg, var(--style-secondary), var(--style-neutral));
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Smooth transitions */
+button, .nav-item {
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
